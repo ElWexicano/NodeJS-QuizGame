@@ -1,0 +1,16 @@
+{
+    "name": "quiz-game",
+    "version": "0.0.1",
+    "private": "true",
+    "author": "Shane Doyle",
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/iamshanedoyle/nodequizgame"
+  },
+    "dependencies": {
+        "express": "",
+        "jade": "",
+        "mongodb": "",
+        "mongoose": ""
+    }
+}

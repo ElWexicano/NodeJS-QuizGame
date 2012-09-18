@@ -1,0 +1,13 @@
+!!! 5
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    body
+        div.topbar.navbar.navbar-fixed-top
+            div.fill
+                div.container
+                    a(href='/').brand #{title}
+    div.container!= body
+        footer
+            p 
