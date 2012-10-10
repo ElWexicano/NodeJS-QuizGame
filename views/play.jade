@@ -1,11 +1,25 @@
-div.hero-unit
-    h1 Heading
+extends layout
 
-div.content
-    div.row
-        div.span12
-            h2 Sub-Heading
-            ul.unstyled.indent
-                each example in examples
-                    li
-                        a(href="example/#{example._id}")  #{example.name}  
+block navbar
+ div.centered-pills
+  ul.nav.nav-pills
+   li
+    a(href="/") Home
+   li.active
+    a(href="play") Play the Game
+   li
+    a(href="newQuestion") Quiz Manager
+    
+block content
+ div.span7.well
+  h4(style="text-align: center") Your Score: 0
+  div.progress.progress-striped.active
+   div.bar(style="width:60%")
+  form
+   legend= question
+   input.btn.btn-large.btn-block(type="button",name="answer1",value=answerOne)
+   input.btn.btn-large.btn-block(type="button",name="answer2",value=answerTwo)
+   input.btn.btn-large.btn-block(type="button",name="answer3",value=answerThree)
+   input.btn.btn-large.btn-block(type="button",name="answer4",value=answerFour)
+  div.alert.alert-info
+   <b>Hurry Up! </b> The clock is running down.

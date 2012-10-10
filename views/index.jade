@@ -1,8 +1,24 @@
-div.hero-unit
-    h1 Heading
+extends layout
 
-div.content
-    div.row
-        div.span12
-            h2 Sub-Heading
-            ul.unstyled.indent
+block navbar
+ div.centered-pills
+  ul.nav.nav-pills
+   li.active
+    a(href="/") Home
+   li
+    a(href="play") Play the Game
+   li
+    a(href="newQuestion") Quiz Manager
+  
+block content
+ div.span7.well
+  h4.centered-header Here are the rules
+  p.lead.text-success The Good Rules
+  ul
+   li You have 30 seconds to answer as many questions correctly as you can.
+   li Each question answered correctly scores you 1 point and you gain an extra 5 seconds.
+  p.lead.text-error The Not so Good Rules
+  ul
+   li The clock will continue to countdown to 0.
+   li When the clock reaches 0 the game is over.
+   li Each question answered incorrectly loses you 5 seconds.

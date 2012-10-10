@@ -1,0 +1,22 @@
+!!! 5
+html
+    head
+        title= title
+	link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    body
+        div.topbar.navbar.navbar-fixed-top
+            div.fill
+                div.container
+                    a(href='/').brand #{title}
+	div.hero-unit
+	    h1 Heading
+	div.content
+	    div.row
+		div.span12
+		    h2 Sub-Heading
+		    ul.unstyled.indent
+
+	div#footer.footer
+	  p &copy; nodeblox 2011
+	  script(type='text/javascript', src='/javascripts/bootstrap.min.js')
+	  script(type='text/javascript', src='/javascripts/index.js');

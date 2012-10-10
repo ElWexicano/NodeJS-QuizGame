@@ -1,21 +1,30 @@
-div.page-header
-   h1 Heading
+extends layout
 
-div.content	
-   div.row
-      div.span6
-         form(method='post', action='/newQuestion/').well
-            label Question:
-            input(type='text', placeholder='Type the question here').span5
-            label Answer 1:
-            input(type='text', placeholder='Type answer number 1').span3
-            label Answer 2:
-            input(type='text', placeholder='Type answer number 2').span3
-            label Answer 3:
-            input(type='text', placeholder='Type answer number 3').span3
-            label Answer 4:
-            input(type='text', placeholder='Type answer number 4').span3
-            label.checkbox Check Me Out
-               input(type='checkbox')
-            button(type='Submit').btn Add Question
-            button(type='Submit').btn Cancel
+block navbar
+ div.centered-pills
+  ul.nav.nav-pills
+   li
+    a(href="/") Home
+   li
+    a(href="play") Play the Game
+   li.active
+    a(href="newQuestion") Quiz Manager
+
+block content
+ div.span7.well
+  form(method='post', action='/newQuestion/')
+   legend Add a new Question
+   label Question:
+   input(type='text', placeholder='Type the question here').span6
+   label Correct Answer:
+   input(type='text', placeholder='Type correct answer').span4
+   label Wrong Answer 1:
+   input(type='text', placeholder='Type wrong answer 1').span4
+   label Wrong Answer 2:
+   input(type='text', placeholder='Type wrong answer 2').span4
+   label Wrong Answer 3:
+   input(type='text', placeholder='Type wrong answer 3').span4
+   br
+   div.btn-group.pull-right
+    input(type='Submit', value='Cancel').btn
+    input(type='Submit', value='Add Question').btn
