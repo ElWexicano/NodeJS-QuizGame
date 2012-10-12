@@ -5,7 +5,8 @@ This is a simple quiz game that is created using Node.js, Expressjs, Mongoose, M
 
 This quiz is based upon a project that developed in college as part of a Server Side Programming module.
 
-###Description
+Description
+-------
 
 The quiz will have the following two components:
 
@@ -13,7 +14,8 @@ The quiz will have the following two components:
 
 2. **The Quiz Manager**: this component is used by an administrator or manager to add, delete and edit quiz questions. They can also view all the questions that are currently in the quiz.
 
-###Game Rules
+Game Rules
+-------
 
 * The user starts with 30 seconds to answer as many questions as possible.
 * The clock will continue to countdown during the game.
@@ -21,7 +23,8 @@ The quiz will have the following two components:
 * Each question answered incorrectly results in 3 being taken away from the clock.
 * The game ends once the clock reaches 0.
 
-###Features
+Features
+-------
 
 The application has the following features:
 
@@ -31,7 +34,8 @@ The application has the following features:
 * The ability to add new questions using the Quiz Manager component.
 * The ability to view questions using the Quiz Manager component. These questions can be edited or deleted.
 
-###Technologies
+Technologies
+-------
 
 The application was developed using:
 
@@ -42,3 +46,11 @@ The application was developed using:
 * **Jade**
 * **Bootstrap**
 * **Cloud Foundry**
+
+Author
+-------
+
+**Shane Doyle**
+
++ http://twitter.com/iamshanedoyle
++ http://github.com/iamshanedoyle
