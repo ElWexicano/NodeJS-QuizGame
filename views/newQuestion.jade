@@ -12,19 +12,19 @@ block navbar
 
 block content
  div.span7.well
-  form(method='post', action='/newQuestion/')
+  form(method='post', action='/addQuestion/')
    legend Add a new Question
    label Question:
-   input(type='text', placeholder='Type the question here').span6
+   input(type='text', name='question', placeholder='Type the question here').span6
    label Correct Answer:
-   input(type='text', placeholder='Type correct answer').span4
+   input(type='text', name='correctAnswer', placeholder='Type correct answer').span4
    label Wrong Answer 1:
-   input(type='text', placeholder='Type wrong answer 1').span4
+   input(type='text', name='wrongAnswer1', placeholder='Type wrong answer 1').span4
    label Wrong Answer 2:
-   input(type='text', placeholder='Type wrong answer 2').span4
+   input(type='text', name='wrongAnswer2', placeholder='Type wrong answer 2').span4
    label Wrong Answer 3:
-   input(type='text', placeholder='Type wrong answer 3').span4
+   input(type='text', name='wrongAnswer3', placeholder='Type wrong answer 3').span4
    br
    div.btn-group.pull-right
-    input(type='Submit', value='Cancel').btn
+    input(type='button', value='Cancel').btn
     input(type='Submit', value='Add Question').btn

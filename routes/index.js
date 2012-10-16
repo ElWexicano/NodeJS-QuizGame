@@ -1,43 +1,73 @@
 // Application Routes
 
 module.exports = function(app, models) {
-
+	
 	// Default Route
 	app.get('/', function(req, res) {
-
 		res.render('index.jade', {
-			locals: {title: 'The Rapid Quiz Game'}
+			title: 'The Rapid Quiz Game'
 		});
-
-		// Get the data from the db
-		// models.examples.find({}, function(err, docs){
-		// 	res.render('index.jade', {
-		// 		locals: {
-		// 			title: 'Example',
-		// 			search_placeholder: 'Search',
-		// 			examples: docs
-		// 		}
-		// 	});
-		// });
+	});
+	
+	// Game Routes - Play
+	app.get('/play', function(req, res) {
+		models.Question.find(function(err, questions) {
+			var question = questions[0];
+			res.render('play.jade', {
+				title: 'The Rapid Quiz Game',
+				question: question.title + ' ?',
+				answer1: question.answers['correct'],
+				answer2: question.answers['incorrect'][0],
+				answer3: question.answers['incorrect'][1],
+				answer4: question.answers['incorrect'][2],
+			});
+		});
+	});
+	
+	// Game Routes - Answer
+	app.post('/answerQuestion', function(req, res) {
 		
 	});
-	
-	// Play the Game Route
-	app.get('/play', function(req, res) {
-		res.render('play.jade', {
-			locals: {title: 'The Rapid Quiz Game'}
+
+	// Game Routes - Play Again
+	app.post('/playAgain', function (req, res) {
+		
+	});
+
+	// Admin Routes
+	app.get('/gameManager', function(req, res) {
+		res.render("", {
+			
 		});
 	});
 
-	app.get('/newQuestion', function(req, res) {
-		res.render("newQuestion.jade", {
-			locals: {title: 'New Question'}
+	// Admin Routes - Create Question
+	app.get('/gameManager/createQuestion', function(req, res) {
+		res.render("createQuestion.jade", {
+			title: 'The Rapid Quiz Game'
 		});
 	});
 	
-	// Adding a new Question
-	app.get('/addQuestion', function(req, res) {
-		res.send("adding a question");
+	// Admin Routes - Submit Question
+	app.post('/gameManager/submitQuestion', function(req, res) {
+		var title = req.body.question;
+		var correctAnswer = req.body.correctAnswer;
+		var wrongAnswers = [req.body.wrongAnswer1, 
+			req.body.wrongAnswer2, req.body.wrongAnswer3];
+
+		new models.Question({
+			title: title,
+			answers: { correct: correctAnswer, incorrect: wrongAnswers}
+		}).save();
+	});
+	
+	// Admin Routes - View Questions
+	app.get('/gameManager/viewQuestions', function(req, res) {
+		models.Question.find(function(err, questions) {
+			res.render("viewQuestions.jade", {
+				questions: questions 
+			});
+		});
 	});
 	
 };  

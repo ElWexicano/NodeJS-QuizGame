@@ -1,5 +1,6 @@
+// The Score Model
+
 module.exports = function(mongoose) {
-	var collection = 'scores';
 	var Schema = mongoose.Schema;
 	var ObjectId = Schema.ObjectId;
 
@@ -10,7 +11,7 @@ module.exports = function(mongoose) {
 		country: String
 	});
 
-	this.model = mongoose.model(collection, schema);
+	this.model = mongoose.model('Score', schema);
 
 	return this;
 };  

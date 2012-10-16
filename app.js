@@ -5,8 +5,8 @@ app.mongoose = require('mongoose');
 var config = require('./config.js')(app, express);
 
 var models = {};
-models.questions = require('./models/question')(app.mongoose).model;
-models.scores = require('./models/score')(app.mongoose).model;
+models.Question = require('./models/question')(app.mongoose).model;
+models.Score = require('./models/score')(app.mongoose).model;
 
 require('./routes/index')(app, models);
 
