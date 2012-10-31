@@ -7,14 +7,20 @@ block navbar
     a(href="/") Home
    li.active
     a(href="play") Play the Game
-   li
-    a(href="newQuestion") Quiz Manager
+   li.dropdown
+    a.dropdown-toggle(data-toggle="dropdown", href="#") Quiz Manager
+     b.caret
+    ul.dropdown-menu
+     li
+      a(href="/quizManager/createQuestion") Create Question
+     li
+      a(href="/quizManager/viewQuestions") View Questions
     
 block content
  div.span7.well
   h4(style="text-align: center") Your Score: 0
   div.progress.progress-striped.active
-   div.bar(style="width:60%")
+   div.bar(style="width:100%", name="bar")
   form
    legend= question
    input.btn.btn-large.btn-block(type="button",name="answer1",value=answer1)

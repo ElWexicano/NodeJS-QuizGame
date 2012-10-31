@@ -1,0 +1,19 @@
+extends layout
+
+block navbar
+ div.centered-pills
+  ul.nav.nav-pills
+   li
+    a(href="/") Home
+   li
+    a(href="play") Play the Game
+   li.dropdown
+    a.dropdown-toggle(data-toggle="dropdown", href="#") Quiz Manager
+     b.caret
+    ul.dropdown-menu
+     li
+      a(href="/quizManager/createQuestion") Create Question
+     li.active
+      a(href="/quizManager/viewQuestions") View Questions
+     li
+      a(href="/quizManager/logout") Logout

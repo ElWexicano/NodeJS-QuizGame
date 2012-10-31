@@ -1,0 +1,30 @@
+extends layout
+
+block navbar
+ div.centered-pills
+  ul.nav.nav-pills
+   li
+    a(href="/") Home
+   li
+    a(href="/play") Play the Game
+   li.dropdown
+    a.dropdown-toggle(data-toggle="dropdown", href="#") Quiz Manager
+     b.caret
+    ul.dropdown-menu
+     li
+      a(href="/quizManager/createQuestion") Create Question
+     li
+      a(href="/quizManager/viewQuestions") View Questions
+    
+block content
+ div.span7.well
+  form(method="post", action="")
+   legend You will need to login!
+   label Username:
+   input(type="text", name="username", placeholder="Username").span3
+   label Password:
+   input(type="password", name="password",).span3
+   br
+   div.btn-group.pull-right
+    input(type="button", value="Reset", name="resetFormButton").btn
+    input(type="submit", value="Log In").btn

@@ -16,26 +16,34 @@ html
          a(href="/") Home
         li
          a(href="play") Play the Game
-        li
-         a(href="newQuestion") Quiz Manager
-    block content
-     div.span7.well
-    div.span4.pull-right
-     div.well
-      h4.centered-header Top Scores
-      table.table
-       thead
-        tr
-         th #
-         th Name
-         th Date
-       tbody
-        tr
-         td
-         td
-         td
-    script(type='text/javascript', src='/javascripts/jquery-1.8.2.js');
-    script(type='text/javascript', src='/javascripts/bootstrap.min.js')
+        li.dropdown
+         a.dropdown-toggle(data-toggle="dropdown", href="#") Quiz Manager
+          b.caret
+         ul.dropdown-menu
+          li
+           a(href="/quizManager/createQuestion") Create Question
+          li
+           a(href="/quizManager/viewQuestions") View Questions
+         
+    block contentHolder
+     block content
+      div.span7.well
+     div.span4.pull-right
+      div.well
+       h4.centered-header Top Scores
+       table.table
+        thead
+         tr
+          th #
+          th Name
+          th Date
+        tbody
+         tr
+          td
+          td
+          td
+    script(type='text/javascript', src='http://code.jquery.com/jquery-latest.js')
+    script(type='text/javascript', src='http://twitter.github.com/bootstrap/assets/js/bootstrap.js');
     script(type='text/javascript', src='/javascripts/index.js');
    hr
    footer.centered-header

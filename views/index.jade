@@ -7,8 +7,14 @@ block navbar
     a(href="/") Home
    li
     a(href="play") Play the Game
-   li
-    a(href="newQuestion") Quiz Manager
+   li.dropdown
+    a.dropdown-toggle(data-toggle="dropdown", href="#") Quiz Manager
+     b.caret
+    ul.dropdown-menu
+     li
+      a(href="/quizManager/createQuestion") Create Question
+     li
+      a(href="/quizManager/viewQuestions") View Questions
   
 block content
  div.span7.well
