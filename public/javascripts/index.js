@@ -35,6 +35,8 @@ $(function() {
 		
 		$("form").get(0).reset();
 	});
+	
+	ko.applyBindings(new ViewModel());
 });
 
 
