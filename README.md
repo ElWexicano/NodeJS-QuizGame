@@ -42,7 +42,7 @@ The application was developed using:
 * **Node.js**
 * **Expressjs**
 * **Mongoose**
-* **Mongodb*
+* **Mongodb**
 * **Jade**
 * **Bootstrap**
 * **Cloud Foundry**
